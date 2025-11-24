@@ -1,0 +1,20 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.subapp {
+  background: linear-gradient(135deg, #22d3ee, #6366f1);
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 120px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.subapp h3 {
+  margin: 0 0 0.5rem;
+}
+
+.subapp p {
+  margin: 0;
+}
