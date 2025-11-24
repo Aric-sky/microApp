@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React 子应用</title>
+    <style>
+      :root {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .subapp {
+        background: linear-gradient(135deg, #22d3ee, #6366f1);
+        color: white;
+        border-radius: 10px;
+        padding: 1rem;
+        min-height: 120px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .subapp h3 {
+        margin: 0 0 0.5rem;
+      }
+
+      .subapp p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import React from 'https://esm.sh/react@18.3.1';
+      import { createRoot } from 'https://esm.sh/react-dom@18.3.1/client';
+
+      function SubApp() {
+        return (
+          React.createElement(
+            'div',
+            { className: 'subapp' },
+            React.createElement('h3', null, 'React 子应用'),
+            React.createElement(
+              'p',
+              null,
+              '这是通过静态 HTML 模板加载的 React 子应用，无需单独启动端口。'
+            )
+          )
+        );
+      }
+
+      const rootContainer = document.getElementById('root');
+      const root = createRoot(rootContainer);
+      root.render(React.createElement(SubApp));
+    </script>
+  </body>
+</html>

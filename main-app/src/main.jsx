@@ -7,7 +7,7 @@ const garfish = new Garfish({
   apps: [
     {
       name: 'react-subapp',
-      entry: 'http://localhost:4001',
+      entry: '/micro-subapp/index.html',
       domGetter: '#subapp-container',
       sandbox: { open: true },
     },
@@ -44,6 +44,7 @@ function App() {
         <h1>Garfish React Host</h1>
         <p>
           这个 demo 展示了如何在 React 主项目中通过 Garfish 挂载一个独立的 React 子应用。
+          子应用以静态 HTML 模板的方式提供，无需单独启动端口。
         </p>
       </header>
 
