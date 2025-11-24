@@ -11,13 +11,7 @@ cd main-app && npm install
 cd ../sub-app && npm install
 ```
 
-启动子应用（默认端口 4001）：
-
-```bash
-npm run dev
-```
-
-然后在另一个终端启动宿主应用（默认端口 4000）：
+子应用现在通过静态 HTML 模板提供，无需单独启动端口。只需启动宿主应用（默认端口 4000）：
 
 ```bash
 cd ../main-app
@@ -35,6 +29,6 @@ sub-app/    独立子应用，被 Garfish 动态挂载
 
 ## 主要逻辑
 
-- 宿主应用通过 `Garfish` 实例注册子应用的入口 `http://localhost:4001`，并指定挂载节点 `#subapp-container`。
+- 宿主应用通过 `Garfish` 实例注册子应用的入口 `/micro-subapp/index.html`，并指定挂载节点 `#subapp-container`。
 - 点击按钮时调用 `garfish.loadApp('react-subapp')` 或 `garfish.unmountApp('react-subapp')` 来挂载/卸载子应用。
-- 子应用本身是一个普通的 React/Vite 应用，无需额外 Garfish 适配即可被加载。
+- 子应用以静态 HTML 模板的形式放置在宿主应用的 `public/micro-subapp` 目录下，无需单独运行端口即可被加载。
